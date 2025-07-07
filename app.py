@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+from streamlit import session_state as ss
 
 st.markdown("""
     <style>
@@ -11,18 +13,14 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-import pandas as pd
-from streamlit import session_state as ss
-
-
 if 'authentication_status' not in ss:
     st.switch_page('./pages/Account.py')
 elif ss['authentication_status'] is None:
     st.switch_page('./pages/Account.py')
 else:
     #set the page as wide
-    st.set_page_config(page_title="Forecast Demo", page_icon=":bar_chart:", layout="wide")
-    
+    st.title('Powerplant Forecasting')
+
     data, approach, models, test = st.tabs(['Data', 'Approach', 'Models', 'Results'])
 
     with data:
