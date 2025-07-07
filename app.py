@@ -1,4 +1,16 @@
 import streamlit as st
+
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {visibility: hidden;}
+    .stActionButtonIcon {visibility: hidden;}
+    .css-eczf16 {display: none}  /* Hides the GitHub, Share, etc. icons */
+    </style>
+""", unsafe_allow_html=True)
+
 import pandas as pd
 from streamlit import session_state as ss
 
