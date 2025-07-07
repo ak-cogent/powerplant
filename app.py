@@ -22,8 +22,7 @@ elif ss['authentication_status'] is None:
 else:
     #set the page as wide
     st.set_page_config(page_title="Forecast Demo", page_icon=":bar_chart:", layout="wide")
-    st.title('Powerplant Forecasting')
-
+    
     data, approach, models, test = st.tabs(['Data', 'Approach', 'Models', 'Results'])
 
     with data:
